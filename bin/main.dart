@@ -1,11 +1,15 @@
 import 'package:http/http.dart' as http;
 import 'package:html/parser.dart' show parse;
-import 'lib/cotizacion.dart';
+import '../lib/cotizacion.dart';
 
 void main() async {
   const url = 'https://www.cronista.com/MercadosOnline/dolar.html';
 
   var response = await http.get(url);
+  if (response.statusCode != 200) {
+    print('Error del servidor. Vuelva a intentarlo más tarde.');
+    return;
+  }
   var html = parse(response.body);
   var tables = html.body.getElementsByClassName('tabla-datos dolar-cotizacion');
   List<Cotizacion> cotizaciones = <Cotizacion>[];
@@ -24,7 +28,11 @@ void main() async {
         .substring(2)
         .replaceAll(',', '.'));
 
-    cotizaciones.add(Cotizacion(tipo: tipo, compra: compra, venta: venta));
+    cotizaciones.add(Cotizacion(
+      tipo: tipo,
+      compra: compra,
+      venta: venta,
+    ));
   });
 
   cotizaciones.forEach((element) => print(element));
