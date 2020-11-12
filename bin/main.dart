@@ -1,20 +1,6 @@
 import 'package:http/http.dart' as http;
 import 'package:html/parser.dart' show parse;
-
-class Cotizacion {
-  Cotizacion({this.tipo, this.compra, this.venta});
-
-  String tipo;
-  double compra;
-  double venta;
-
-  String toString() {
-    return '${tipo.padRight(20)}\tCompra: ARS ${compra.toStringAsFixed(2)}\tVenta: ARS ${venta.toStringAsFixed(2)}';
-  }
-
-  Map toJson() =>
-      {'tipo': this.tipo, 'compra': this.compra, 'venta': this.venta};
-}
+import 'lib/cotizacion.dart';
 
 void main() async {
   const url = 'https://www.cronista.com/MercadosOnline/dolar.html';
