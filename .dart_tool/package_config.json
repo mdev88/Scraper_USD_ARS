@@ -39,7 +39,7 @@
     },
     {
       "name": "meta",
-      "rootUri": "file:///home/user/.pub-cache/hosted/pub.dartlang.org/meta-1.2.3",
+      "rootUri": "file:///home/user/.pub-cache/hosted/pub.dartlang.org/meta-1.2.4",
       "packageUri": "lib/",
       "languageVersion": "1.12"
     },
@@ -86,7 +86,7 @@
       "languageVersion": "2.10"
     }
   ],
-  "generated": "2020-11-12T18:11:15.976018Z",
+  "generated": "2020-12-17T14:42:33.353428Z",
   "generator": "pub",
-  "generatorVersion": "2.10.1"
+  "generatorVersion": "2.10.4"
 }
